@@ -1,0 +1,194 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/everything_library/src/startup.gd" type="Script" id=1]
+[ext_resource path="res://addons/everything_library/src/list_folder.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Image" id=3]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 55, 55, 0, 222, 222, 222, 57, 222, 222, 222, 57, 55, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 0, 223, 223, 223, 190, 223, 223, 223, 190, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 0, 223, 223, 223, 190, 223, 223, 223, 190, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 0, 223, 223, 223, 190, 223, 223, 223, 190, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 55, 55, 0, 112, 112, 112, 0, 112, 112, 112, 0, 112, 112, 112, 0, 167, 167, 167, 0, 223, 223, 223, 190, 223, 223, 223, 190, 167, 167, 167, 0, 112, 112, 112, 0, 112, 112, 112, 0, 112, 112, 112, 0, 55, 55, 55, 0, 222, 222, 222, 50, 224, 224, 224, 204, 224, 224, 224, 204, 224, 224, 224, 204, 224, 224, 224, 204, 224, 224, 224, 242, 224, 224, 224, 242, 224, 224, 224, 204, 224, 224, 224, 204, 224, 224, 224, 204, 224, 224, 224, 204, 222, 222, 222, 50, 221, 221, 221, 44, 223, 223, 223, 179, 223, 223, 223, 179, 223, 223, 223, 179, 223, 223, 223, 179, 224, 224, 224, 236, 224, 224, 224, 236, 223, 223, 223, 179, 223, 223, 223, 179, 223, 223, 223, 179, 223, 223, 223, 179, 221, 221, 221, 44, 55, 55, 55, 0, 111, 111, 111, 0, 111, 111, 111, 0, 111, 111, 111, 0, 167, 167, 167, 0, 223, 223, 223, 190, 223, 223, 223, 190, 167, 167, 167, 0, 111, 111, 111, 0, 111, 111, 111, 0, 111, 111, 111, 0, 55, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 0, 223, 223, 223, 190, 223, 223, 223, 190, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 0, 223, 223, 223, 190, 223, 223, 223, 190, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 0, 223, 223, 223, 190, 223, 223, 223, 190, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 55, 55, 0, 221, 221, 221, 38, 221, 221, 221, 38, 55, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id=2]
+image = SubResource( 3 )
+size = Vector2( 12, 12 )
+
+[node name="EverythingLibraryDialog" type="AcceptDialog"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -302.5
+margin_top = -185.5
+margin_right = 302.5
+margin_bottom = 185.5
+window_title = "Welcome!"
+script = ExtResource( 1 )
+item_scene = ExtResource( 3 )
+
+[node name="BG" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+color = Color( 0, 0, 0, 0.498039 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 589.0
+margin_bottom = 14.0
+text = "Let's set some things up."
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 589.0
+margin_bottom = 32.0
+text = "Choose folders where you store things."
+
+[node name="MarginContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 589.0
+margin_bottom = 258.0
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 589.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 589.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 184.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+text = "Folder path"
+align = 1
+valign = 1
+
+[node name="Panel2" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 188.0
+margin_right = 372.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+hint_tooltip = "The folder's contents will be stored as a collection
+in the Library singleton with this name."
+mouse_filter = 0
+mouse_default_cursor_shape = 16
+size_flags_horizontal = 3
+text = "Property in singleton(?)"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Label2"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 376.0
+margin_right = 560.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+hint_tooltip = "The property to use as a key in the dictionary.
+
+If resource_path, will use filename without the extension.
+
+If empty, will create an Array instead."
+mouse_filter = 0
+mouse_default_cursor_shape = 16
+size_flags_horizontal = 3
+text = "Dictionary key (?)"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Panel3" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Label3"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 564.0
+margin_right = 588.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 24, 32 )
+align = 1
+valign = 1
+
+[node name="Panel4" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Label4"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Folders" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 36.0
+margin_right = 589.0
+margin_bottom = 36.0
+
+[node name="AddFolder" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_left = 248.0
+margin_top = 40.0
+margin_right = 340.0
+margin_bottom = 60.0
+size_flags_horizontal = 4
+text = "Add folder"
+icon = SubResource( 2 )
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+margin_top = 262.0
+margin_right = 589.0
+margin_bottom = 327.0
+text = "You can remap folders later by managing the resources inside res://addons/everything_library, or going to:
+
+Project -> Tools -> Manage Everything Library"
+autowrap = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -294.5
+margin_top = -177.5
+margin_right = 294.5
+margin_bottom = 149.5
+rect_min_size = Vector2( 150, 52.5 )
+window_title = "Open a folder with some Resources..."
+mode_overrides_title = false
+mode = 2
+
+[connection signal="hide" from="." to="BG" method="hide"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/AddFolder" to="." method="_on_AddFolder_pressed"]
