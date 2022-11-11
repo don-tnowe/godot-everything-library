@@ -14,9 +14,9 @@ func load_folder_collection(info_res):
 	if info_res == null: return  # Happens.
 	var folder_contents = load_files_in_folder(
 		info_res.folder.trim_suffix("/") + "/",
-		info_res.flags["R"]
+		info_res.flags["Recursive"]
 	)
-	var flag_nonunique = info_res.flags["N"]
+	var flag_nonunique = info_res.flags["Non-unique-keys"]
 	var result = {}
 	if info_res.key == "":
 		result = []

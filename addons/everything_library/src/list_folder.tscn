@@ -42,7 +42,7 @@ margin_bottom = 24.0
 rect_min_size = Vector2( 80, 0 )
 custom_constants/separation = 0
 
-[node name="R" type="CheckBox" parent="Flags"]
+[node name="Recursive" type="CheckBox" parent="Flags"]
 margin_right = 40.0
 margin_bottom = 24.0
 hint_tooltip = "Recursive
@@ -52,7 +52,7 @@ size_flags_horizontal = 3
 text = "R"
 clip_text = true
 
-[node name="N" type="CheckBox" parent="Flags"]
+[node name="Non-unique-keys" type="CheckBox" parent="Flags"]
 margin_left = 40.0
 margin_right = 80.0
 margin_bottom = 24.0
