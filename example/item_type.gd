@@ -62,4 +62,5 @@ export(int, FLAGS,
 		"E_RING",
 		"E_NECK"
 	) var slot_flags := 1
+export var rarity_color : Color
 export var default_properties : Dictionary

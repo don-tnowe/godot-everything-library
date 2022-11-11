@@ -5,39 +5,66 @@ script/source = "extends Label
 
 
 func _ready():
-	for k in Library.items:
-		$\"../Label\".text += \"\\n\" + str(k) + \": \" + Library.items[k].item_name
+	for k in Library.items if Library.items is Dictionary else Library.items.size():
+		$\"../Label\".text += \"\\n\" + str(k) + \": \" + get_item_name(Library.items[k])
+
+
+func get_item_name(item_or_array):
+	if item_or_array is Array:
+		var result = []
+		for x in item_or_array:
+			result.append(x.item_name)
+			
+		return \"[\" + \", \".join(result) + \"]\"
+		
+	else:
+		return item_or_array.item_name
 "
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Label" type="Label" parent="."]
-margin_left = 326.0
-margin_top = 149.0
-margin_right = 619.0
-margin_bottom = 404.0
+[node name="Label2" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 146.0
+margin_right = 395.0
+margin_bottom = 194.0
+text = "Don't forget to add the folder in 
+Project -> Tools -> Manage Everything Library!
+It's located in res://example/items/
 
-[node name="Label3" type="Label" parent="Label"]
-anchor_top = 1.0
+You can edit them there later, or look into the addon's root folder
+(don't be afraid to rename the .tres files)"
+script = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 571.0
+margin_top = 143.0
+margin_right = 864.0
+margin_bottom = 398.0
+autowrap = true
+
+[node name="Panel" type="PanelContainer" parent="Label"]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 18.0
-margin_bottom = 32.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 102.0
+margin_top = 302.0
+margin_right = 552.0
+margin_bottom = 401.0
 text = "All this script does?
 
 for k in Library.items:
 		$\"../Label\".text += \"\\n\" + str(k) + \": \" + Library.items[k].item_name
 		
 \"Library\" is the singleton. \"items\" is the property (if you named it that)"
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 309.0
-margin_top = 95.0
-margin_right = 600.0
-margin_bottom = 143.0
-text = "Don't forget to add the folder in 
-Project -> Tools -> Manage Everything Library!
-It's located in res://example/items/"
-script = SubResource( 1 )

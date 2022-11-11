@@ -14,5 +14,6 @@ in_inventory_height = 1
 texture = SubResource( 1 )
 texture_scale = 1.0
 slot_flags = 513
+rarity_color = Color( 0.558508, 0.249023, 1, 1 )
 default_properties = {
 }
