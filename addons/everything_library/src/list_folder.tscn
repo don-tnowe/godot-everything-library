@@ -22,26 +22,61 @@ margin_right = 466.0
 margin_bottom = 24.0
 
 [node name="Path" type="Button" parent="."]
-margin_right = 142.0
+margin_right = 111.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "Click to select..."
 clip_text = true
 
 [node name="Property" type="LineEdit" parent="."]
-margin_left = 146.0
-margin_right = 288.0
+margin_left = 115.0
+margin_right = 226.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 placeholder_text = "Singleton Property..."
 
+[node name="Flags" type="HBoxContainer" parent="."]
+margin_left = 230.0
+margin_right = 310.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 80, 0 )
+custom_constants/separation = 0
+
+[node name="R" type="CheckBox" parent="Flags"]
+margin_right = 40.0
+margin_bottom = 24.0
+hint_tooltip = "Recursive
+
+Grab files from the folder's subfolders too, and these subfolders' subfolders as well."
+size_flags_horizontal = 3
+text = "R"
+clip_text = true
+
+[node name="N" type="CheckBox" parent="Flags"]
+margin_left = 40.0
+margin_right = 80.0
+margin_bottom = 24.0
+hint_tooltip = "Non-unique
+
+Each key stores an array with all items whose property's value is equal to the key.
+
+Good if you want to grab all items belonging to the same category."
+size_flags_horizontal = 3
+text = "N"
+clip_text = true
+
 [node name="Key" type="LineEdit" parent="."]
-margin_left = 292.0
-margin_right = 434.0
+margin_left = 314.0
+margin_right = 426.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "resource_path"
 placeholder_text = "Key Property..."
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 430.0
+margin_right = 434.0
+margin_bottom = 24.0
 
 [node name="Remove" type="Button" parent="."]
 margin_left = 438.0

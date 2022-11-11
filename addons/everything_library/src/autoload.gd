@@ -12,25 +12,29 @@ func _ready():
 
 func load_folder_collection(info_res):
 	if info_res == null: return  # Happens.
-	var folder_contents = load_files_in_folder(info_res.folder.trim_suffix("/") + "/")
+	var folder_contents = load_files_in_folder(
+		info_res.folder.trim_suffix("/") + "/",
+		info_res.flags["R"]
+	)
+	var flag_nonunique = info_res.flags["N"]
 	var result = {}
 	if info_res.key == "":
 		result = []
 		for x in folder_contents:
-			result.append(x)
+			add_to_collection(result, result.size(), x)
 			
 	elif info_res.key == "resource_path":
 		for x in folder_contents:
-			result[x.resource_path.get_file().get_basename()] = x
+			add_to_collection(result, x.resource_path.get_file().get_basename(), x, flag_nonunique)
 			
 	else:
 		for x in folder_contents:
-			result[x.get(info_res.key)] = x
+			add_to_collection(result, x.get(info_res.key), x, flag_nonunique)
 		
 	set(info_res.property_in_singleton, result)
 
 
-func load_files_in_folder(path) -> Array:
+func load_files_in_folder(path, recursive = false) -> Array:
 	var dir = Directory.new()
 	var loaded := []
 	dir.open(path)
@@ -38,7 +42,24 @@ func load_files_in_folder(path) -> Array:
 	while true:
 		var item = dir.get_next()
 		if item == "": break
-		if item.is_valid_filename():
+		if !dir.current_is_dir():
 			loaded.append(load(path + item))
 
+		elif recursive:
+			loaded.append_array(load_files_in_folder(path + item + "/", true))
+
 	return loaded
+
+
+func add_to_collection(collection, key, value, nonunique = false):
+	if nonunique:
+		if !collection.has(key):
+			collection[key] = []
+
+		collection[key].append(value)
+
+	elif collection is Array:
+		collection.append(value)
+		
+	else:
+		collection[key] = value

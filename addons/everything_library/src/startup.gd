@@ -53,6 +53,9 @@ func create_list_item(res):
 	new_item.get_node("Property").connect("text_changed", self, "_on_item_property_changed", [new_item, res])
 	new_item.get_node("Key").connect("text_changed", self, "_on_item_key_changed", [new_item, res])
 	new_item.get_node("Remove").connect("pressed", self, "_on_item_removed", [new_item, res])
+	for x in new_item.get_node("Flags").get_children():
+		x.pressed = res.flags.get(x.name, false)
+		x.connect("toggled", self, "_on_flag_toggled", [x.name, new_item, res])
 
 
 func save_res(res):
@@ -111,6 +114,10 @@ func get_properties_code():
 func _on_item_key_changed(value, item, res):
 	res.key = value
 	save_res(res)
+
+
+func _on_flag_toggled(toggled, flag, item, res):
+	res.flags[flag] = toggled
 
 
 func _on_item_removed(item, res):
